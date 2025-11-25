@@ -1,0 +1,7 @@
+{
+  "name": "BrokerAI Dialer",
+  "description": "A professional AI broker dialer with customizable personas, voice settings, and real-time conversational capabilities using Gemini Live API.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
