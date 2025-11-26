@@ -1,4 +1,4 @@
-import { BrokerPersona, VoiceOption, DialerSettings, VoiceBehaviorFlags } from './types';
+import { BrokerPersona, VoiceOption, DialerSettings, VoiceBehaviorFlags, LanguageOption } from './types';
 
 export const BROKER_PERSONAS: BrokerPersona[] = [
   {
@@ -54,6 +54,19 @@ export const VOICES: VoiceOption[] = [
   { id: 'marcus_biz', label: 'Marcus – Executive', engine: 'other', gender: 'Male' },
 ];
 
+export const LANGUAGES: LanguageOption[] = [
+  { code: 'en-US', label: 'English (US)' },
+  { code: 'en-GB', label: 'English (UK)' },
+  { code: 'es-ES', label: 'Spanish' },
+  { code: 'fr-FR', label: 'French' },
+  { code: 'de-DE', label: 'German' },
+  { code: 'nl-NL', label: 'Dutch' },
+  { code: 'it-IT', label: 'Italian' },
+  { code: 'pt-BR', label: 'Portuguese' },
+  { code: 'ja-JP', label: 'Japanese' },
+  { code: 'hi-IN', label: 'Hindi' },
+];
+
 export const DEFAULT_BEHAVIOR: VoiceBehaviorFlags = {
   breathy: false,
   coughs: false,
@@ -68,5 +81,6 @@ export const DEFAULT_BEHAVIOR: VoiceBehaviorFlags = {
 export const DEFAULT_SETTINGS: DialerSettings = {
   brokerPersonaId: 'real_estate',
   voiceId: 'orus_homie',
+  language: 'en-US',
   voiceBehavior: DEFAULT_BEHAVIOR,
 };

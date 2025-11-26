@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Using HashRouter in App
 import { ChevronLeft, Save } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
-import { BROKER_PERSONAS, VOICES } from '../constants';
+import { BROKER_PERSONAS, VOICES, LANGUAGES } from '../constants';
 import { Layout } from '../components/Layout';
 import { DialerSettings, VoiceBehaviorFlags } from '../types';
 
@@ -67,6 +67,23 @@ export const SettingsPage: React.FC = () => {
           {selectedPersona && (
             <p className="text-sm text-slate-400 px-1">{selectedPersona.description}</p>
           )}
+        </section>
+
+        {/* Language Section */}
+        <section className="space-y-3">
+          <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Language</label>
+          <div className="relative">
+            <select
+              value={formData.language || 'en-US'}
+              onChange={(e) => setFormData({ ...formData, language: e.target.value })}
+              className="w-full bg-slate-800 text-white rounded-xl p-4 appearance-none outline-none focus:ring-2 focus:ring-blue-500/50 border border-slate-700"
+            >
+              {LANGUAGES.map(l => (
+                <option key={l.code} value={l.code}>{l.label}</option>
+              ))}
+            </select>
+            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">▼</div>
+          </div>
         </section>
 
         {/* Voice Section */}

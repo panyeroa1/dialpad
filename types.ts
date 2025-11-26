@@ -35,9 +35,15 @@ export interface VoiceOption {
   gender: string;
 }
 
+export interface LanguageOption {
+  code: string;
+  label: string;
+}
+
 export interface DialerSettings {
   brokerPersonaId: string;
   voiceId: string;
+  language: string;
   voiceBehavior: VoiceBehaviorFlags;
 }
 

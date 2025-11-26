@@ -205,4 +205,9 @@ export const DialerPage: React.FC = () => {
       <DialPad
         onDigitPress={handleDigit}
         onDelete={handleDelete}
-        onCall={
+        onCall={handleStartCall}
+        disabled={false}
+      />
+    </Layout>
+  );
+};
